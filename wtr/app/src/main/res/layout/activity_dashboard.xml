@@ -1,0 +1,238 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#1E1E2E"
+    android:padding="16dp"
+    android:id="@+id/root">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"  >
+
+      <!-- Top Toolbar Section -->
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="40dp"
+          android:layout_marginTop="20dp">
+
+         <SearchView
+             android:id="@+id/cityEditText"
+             android:layout_width="match_parent"
+             android:layout_height="56dp"
+             android:queryHint="Search city"
+             android:textColorHint="#FFFFFF"
+             android:textColor="#FFFFFF"
+             android:paddingLeft="20dp"
+             android:paddingRight="20dp"
+             android:background="@drawable/search_city_edittext_bg"/>
+
+      </RelativeLayout>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal">
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/baseline_location_on_24"/>
+
+         <TextView
+             android:id="@+id/cityNameTextView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Cairo"
+             android:layout_marginLeft="15dp"
+             android:textColor="@color/white"
+             android:fontFamily="sans-serif"/>
+
+      </LinearLayout>
+
+      <!-- Weather Report Section -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:gravity="center"
+          android:layout_marginTop="30dp">
+
+         <TextView
+             android:id="@+id/todays_report"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Today's Report"
+             android:textColor="#FFFFFF"
+             android:textSize="20sp"
+             android:layout_marginBottom="20dp"
+             android:textStyle="bold" />
+
+         <!-- Weather Icon and Temperature -->
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:padding="40dp"
+             android:background="@drawable/dashboard_bg">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+         </RelativeLayout>
+         <TextView
+             android:id="@+id/weatherStatusTextView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="It's Cloudy"
+             android:textColor="#FFFFFF"
+             android:textSize="18sp"
+             android:layout_marginTop="20dp"
+             android:gravity="center" />
+
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="29"
+                android:textColor="#FFFFFF"
+                android:textSize="72sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_toRightOf="@id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="°"
+                android:textColor="#3466CA"
+                android:textSize="72sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginTop="-5dp"
+                android:gravity="center"
+                />
+
+         </RelativeLayout>
+      </LinearLayout>
+
+      <!-- Weather Info Section -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:gravity="center"
+          android:layout_marginTop="50dp"
+          android:weightSum="3">
+
+         <!-- Sun Icon -->
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:src="@drawable/sunrise"/>
+
+            <TextView
+                android:id="@+id/sunriseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 km/h"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunrise"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:gravity="center" />
+         </LinearLayout>
+
+         <!-- Humidity Icon -->
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             android:gravity="center">
+
+            <ImageView
+                android:id="@+id/humidity_icon"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_height_size"
+                android:src="@drawable/humidity"
+                android:paddingBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/humidityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30%"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/humidity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:gravity="center" />
+         </LinearLayout>
+
+         <!-- Rain Icon -->
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:src="@drawable/sunset" />
+
+            <TextView
+                android:id="@+id/sunsetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 km/h"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunset"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:gravity="center" />
+         </LinearLayout>
+      </LinearLayout>
+
+   </LinearLayout>
+
+</RelativeLayout>
